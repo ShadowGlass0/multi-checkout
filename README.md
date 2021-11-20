@@ -26,7 +26,9 @@ The private actions can then be used like so:
   uses: ../my-org/example-action
 ```
 
-The token must have read access to the repositories. In the case of private repositories you'll want to create a [machine user](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users), add the machine user to the repositories that you want to checkout and then generate a token for the machine user. Alternatively use [deploy keys](https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys) via the [`ssh-key` input](https://github.com/actions/checkout#usage).
+The token must have read access to the repositories.
+In the case of private repositories you'll want to create a [machine user](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users), add the machine user to the repositories that you want to checkout and then generate a token for the machine user.
+Alternatively use [deploy keys](https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys) via the [`ssh-key` input](https://github.com/actions/checkout#usage).
 
 ## Inputs
 

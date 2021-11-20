@@ -2,9 +2,11 @@ name: Multi Checkout
 description: Checkout multiple additional repositories
 inputs:
   repositories:
-    description: 'Newline-separated repositories in the form of `owner/name` (to checkout the default branch) or `owner/name@ref` where `ref` is a branch name, tag or SHA to checkout.'
+    description: 'JSON Array of repositories in the form of `owner/name` (to checkout the default branch) or `owner/name@ref` where `ref` is a branch name, tag or SHA to checkout.'
+    required: true
   path:
-    description: 'Relative path under `$GITHUB_WORKSPACE` to place the repositories. Default is `..` so that repositories are cloned to `../owner/name`.'
+    description: 'Relative path under `$GITHUB_WORKSPACE` to place the repositories. Default is `.`'
+    required: false
 
   # The rest is copied from actions/checkout/action.yml
   token:
@@ -20,6 +22,7 @@ inputs:
 
       [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
     default: ${{ github.token }}
+    required: false
   ssh-key:
     description: >
       SSH key used to fetch the repository. The SSH key is configured with the local
@@ -32,26 +35,32 @@ inputs:
 
       [Learn more about creating and using
       encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    required: false
   ssh-known-hosts:
     description: >
       Known hosts in addition to the user and global host key database. The public
       SSH keys for a host may be obtained using the utility `ssh-keyscan`. For example,
       `ssh-keyscan github.com`. The public key for github.com is always implicitly added.
+    required: false
   ssh-strict:
     description: >
       Whether to perform strict host key checking. When true, adds the options `StrictHostKeyChecking=yes`
       and `CheckHostIP=no` to the SSH command line. Use the input `ssh-known-hosts` to
       configure additional hosts.
-    default: true
+    required: false
+    default: "true"
   clean:
     description: 'Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching'
-    default: true
+    required: false
+    default: "true"
   fetch-depth:
     description: 'Number of commits to fetch. 0 indicates all history for all branches and tags.'
-    default: 1
+    required: false
+    default: "1"
   lfs:
     description: 'Whether to download Git-LFS files'
-    default: false
+    required: false
+    default: "false"
   submodules:
     description: >
       Whether to checkout submodules: `true` to checkout submodules or `recursive` to
@@ -60,7 +69,8 @@ inputs:
 
       When the `ssh-key` input is not provided, SSH URLs beginning with `git@github.com:` are
       converted to HTTPS.
-    default: false
+    required: false
+    default: "false"
 runs:
   using: node12
   main: index.js

@@ -6,7 +6,7 @@ const fsp = require('fs').promises
 const path = require('path')
 
 async function main () {
-  const items = JSON.parse (process.env.INPUT_REPOSITORIES || '')
+  const items = JSON.parse(process.env.INPUT_REPOSITORIES || '')
   const workspace = path.resolve(process.env.GITHUB_WORKSPACE || '.')
   const basedir = path.resolve(workspace, process.env.INPUT_PATH || '.')
   const env = {}
@@ -17,7 +17,7 @@ async function main () {
     }
   }
 
-  items.forEach(async() => {
+  items.forEach(async (item) => {
     const [repository, ref, ...a] = item.split('@')
     const [owner, name, ...b] = repository.split('/')
 
@@ -53,7 +53,7 @@ async function main () {
       },
       stdio: ['ignore', 1, 1]
     })
-  });
+  })
 }
 
 main().catch(err => {

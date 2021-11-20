@@ -13,6 +13,6 @@ jobs:
         with:
           repositories: '["vweevers/hallmark-lint-action", "vweevers/additional-tags-action@v1.0"]'
       - name: Verify
-        run: git -C ../vweevers/additional-tags-action log -n 1
+        run: git -C ./vweevers/additional-tags-action log -n 1
       - name: Test
         run: npm it

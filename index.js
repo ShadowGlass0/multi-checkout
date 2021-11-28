@@ -42,14 +42,14 @@ async function main () {
 
         // Circumvent actions/checkout restriction that
         // INPUT_PATH must be under workspace
-        //GITHUB_WORKSPACE: path.dirname(workspace),
+        // GITHUB_WORKSPACE: path.dirname(workspace),
 
         // Unset variables that might be used as defaults
-        //GITHUB_REPOSITORY: '',
-        //GITHUB_SHA: '',
-        //GITHUB_REF: '',
-        //GITHUB_HEAD_REF: '',
-        //GITHUB_BASE_REF: ''
+        // GITHUB_REPOSITORY: '',
+        // GITHUB_SHA: '',
+        // GITHUB_REF: '',
+        // GITHUB_HEAD_REF: '',
+        // GITHUB_BASE_REF: ''
       },
       stdio: ['ignore', 1, 1]
     })

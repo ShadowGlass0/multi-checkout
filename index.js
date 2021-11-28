@@ -38,18 +38,18 @@ async function main () {
         INPUT_REPOSITORY: repository,
         INPUT_REF: ref || '',
         INPUT_PATH: dir,
-        'INPUT_PERSIST-CREDENTIALS': 'false',
+        'INPUT_PERSIST-CREDENTIALS': 'false'
 
         // Circumvent actions/checkout restriction that
         // INPUT_PATH must be under workspace
-        GITHUB_WORKSPACE: path.dirname(workspace),
+        //GITHUB_WORKSPACE: path.dirname(workspace),
 
         // Unset variables that might be used as defaults
-        GITHUB_REPOSITORY: '',
-        GITHUB_SHA: '',
-        GITHUB_REF: '',
-        GITHUB_HEAD_REF: '',
-        GITHUB_BASE_REF: ''
+        //GITHUB_REPOSITORY: '',
+        //GITHUB_SHA: '',
+        //GITHUB_REF: '',
+        //GITHUB_HEAD_REF: '',
+        //GITHUB_BASE_REF: ''
       },
       stdio: ['ignore', 1, 1]
     })

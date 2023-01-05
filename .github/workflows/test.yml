@@ -11,7 +11,7 @@ jobs:
       - name: Multi Checkout
         uses: ./
         with:
-          repositories: '["vweevers/hallmark-lint-action", "vweevers/additional-tags-action@v2.0"]'
+          repositories: '["vweevers/hallmark-lint-action", "vweevers/additional-tags-action@v1.0"]'
       - name: Verify
         run: git -C ./vweevers/additional-tags-action log -n 1
       - name: Test

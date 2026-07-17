@@ -16,7 +16,7 @@
   },
   "repository": "vweevers/multi-checkout-action",
   "engines": {
-    "node": ">=12"
+    "node": ">=24"
   },
   "standard": {
     "ignore": [

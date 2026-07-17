@@ -5,6 +5,8 @@
 ![GitHub tag](https://img.shields.io/github/v/tag/vweevers/multi-checkout-action?sort=semver)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+This action runs on Node.js 24 and requires Actions Runner v2.327.1 or later.
+
 ## Usage
 
 ```yaml
